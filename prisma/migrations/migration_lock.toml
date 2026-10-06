@@ -1,0 +1,4 @@
+# Prisma Migrations Lock File
+# DO NOT EDIT OR DELETE
+
+provider = "postgresql"
