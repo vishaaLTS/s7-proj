@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  serverExternalPackages: ['pdf-parse', 'bcryptjs', '@prisma/client', 'prisma'],
+  experimental: {
+    serverComponentsExternalPackages: ['pdf-parse', 'bcryptjs', '@prisma/client', 'prisma'],
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
