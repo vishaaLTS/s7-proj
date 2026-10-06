@@ -3,6 +3,8 @@ import { authorizeUser, jsonResponse, errorResponse } from '@/lib/rbac';
 import { ATSService } from '@/services/ats-service';
 import { z } from 'zod';
 
+export const dynamic = 'force-dynamic';
+
 const ATSReqSchema = z.object({
   resumeId: z.string().min(1),
   jobId: z.string().optional(),

@@ -3,6 +3,8 @@ import { prisma } from '@/lib/db';
 import { authorizeUser, jsonResponse, errorResponse } from '@/lib/rbac';
 import { z } from 'zod';
 
+export const dynamic = 'force-dynamic';
+
 const UpdateSkillSchema = z.object({
   proficiencyLevel: z.enum(['BEGINNER', 'ELEMENTARY', 'INTERMEDIATE', 'UPPER_INTERMEDIATE', 'ADVANCED', 'EXPERT']).optional(),
   isVerified: z.boolean().optional(),

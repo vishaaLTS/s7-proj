@@ -3,6 +3,8 @@ import { authorizeUser, jsonResponse, errorResponse } from '@/lib/rbac';
 import { InterviewService } from '@/services/interview-service';
 import { z } from 'zod';
 
+export const dynamic = 'force-dynamic';
+
 const AnswerSchema = z.object({
   questionId: z.string().min(1),
   userAnswer: z.string().min(3, 'Answer is too short'),

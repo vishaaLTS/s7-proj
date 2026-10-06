@@ -3,6 +3,8 @@ import { clearAuthCookie, getAuthUser } from '@/lib/auth';
 import { prisma } from '@/lib/db';
 import { jsonResponse, errorResponse } from '@/lib/rbac';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST() {
   clearAuthCookie();
   return jsonResponse({ message: 'Logged out successfully' });

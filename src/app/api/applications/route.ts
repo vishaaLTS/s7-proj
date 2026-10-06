@@ -3,6 +3,8 @@ import { prisma } from '@/lib/db';
 import { authorizeUser, jsonResponse, errorResponse } from '@/lib/rbac';
 import { z } from 'zod';
 
+export const dynamic = 'force-dynamic';
+
 const CreateApplicationSchema = z.object({
   jobId: z.string().min(1),
   status: z.enum(['SAVED', 'APPLIED', 'ASSESSMENT', 'INTERVIEW', 'OFFER', 'REJECTED', 'WITHDRAWN']).default('APPLIED'),

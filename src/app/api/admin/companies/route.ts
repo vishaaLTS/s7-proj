@@ -3,6 +3,8 @@ import { prisma } from '@/lib/db';
 import { authorizeUser, jsonResponse, errorResponse } from '@/lib/rbac';
 import { z } from 'zod';
 
+export const dynamic = 'force-dynamic';
+
 const CreateCompanySchema = z.object({
   name: z.string().min(1),
   industry: z.string().min(1),

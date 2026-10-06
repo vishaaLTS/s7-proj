@@ -49,7 +49,6 @@ export async function getAuthUser(): Promise<TokenPayload | null> {
       select: { id: true, email: true, role: true },
     });
     if (!user) {
-      clearAuthCookie();
       return null;
     }
     return {

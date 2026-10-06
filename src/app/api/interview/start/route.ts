@@ -3,6 +3,8 @@ import { authorizeUser, jsonResponse, errorResponse } from '@/lib/rbac';
 import { InterviewService } from '@/services/interview-service';
 import { z } from 'zod';
 
+export const dynamic = 'force-dynamic';
+
 const StartInterviewSchema = z.object({
   companyId: z.string().min(1),
   jobRoleId: z.string().min(1),

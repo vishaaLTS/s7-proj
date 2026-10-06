@@ -4,6 +4,8 @@ import { comparePassword, signToken, setAuthCookie, Role } from '@/lib/auth';
 import { jsonResponse, errorResponse } from '@/lib/rbac';
 import { z } from 'zod';
 
+export const dynamic = 'force-dynamic';
+
 const LoginSchema = z.object({
   email: z.string().email(),
   password: z.string(),

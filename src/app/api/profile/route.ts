@@ -3,6 +3,8 @@ import { prisma } from '@/lib/db';
 import { authorizeUser, jsonResponse, errorResponse } from '@/lib/rbac';
 import { z } from 'zod';
 
+export const dynamic = 'force-dynamic';
+
 const ProfileSchema = z.object({
   fullName: z.string().optional(),
   phone: z.string().optional().nullable(),

@@ -2,8 +2,9 @@ import { NextRequest } from 'next/server';
 import { prisma } from '@/lib/db';
 import { authorizeUser, jsonResponse, errorResponse } from '@/lib/rbac';
 import { z } from 'zod';
-
 import { NotificationService } from '@/services/notification-service';
+
+export const dynamic = 'force-dynamic';
 
 const CompleteSchema = z.object({
   repoUrl: z.string().url().optional().or(z.literal('')),

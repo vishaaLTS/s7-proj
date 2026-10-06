@@ -3,6 +3,8 @@ import { prisma } from '@/lib/db';
 import { authorizeUser, jsonResponse, errorResponse } from '@/lib/rbac';
 import { z } from 'zod';
 
+export const dynamic = 'force-dynamic';
+
 const SubmitAssessmentSchema = z.object({
   assessmentId: z.string().min(1),
   answers: z.record(z.string()), // questionId -> answer string

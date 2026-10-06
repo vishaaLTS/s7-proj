@@ -6,8 +6,9 @@ import { AIService } from '@/services/ai-service';
 import { SkillAliasService } from '@/services/skill-alias';
 import { NotificationService } from '@/services/notification-service';
 import pdfParse from 'pdf-parse';
-
 import { extractTextFromDocx } from '@/lib/docx-extractor';
+
+export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
   const auth = await authorizeUser();

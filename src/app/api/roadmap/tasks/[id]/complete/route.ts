@@ -2,6 +2,8 @@ import { NextRequest } from 'next/server';
 import { authorizeUser, jsonResponse, errorResponse } from '@/lib/rbac';
 import { RoadmapService } from '@/services/training-roadmap';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: NextRequest, { params }: { params: { id: string } }) {
   const auth = await authorizeUser();
   if ('error' in auth) return auth.error;

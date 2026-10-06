@@ -2,6 +2,8 @@ import { NextRequest } from 'next/server';
 import { authorizeUser, jsonResponse, errorResponse } from '@/lib/rbac';
 import { FileStorageService } from '@/services/file-storage';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: NextRequest) {
   const auth = await authorizeUser();
   if ('error' in auth) return auth.error;

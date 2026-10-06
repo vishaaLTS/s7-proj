@@ -4,6 +4,8 @@ import { authorizeUser, jsonResponse, errorResponse } from '@/lib/rbac';
 import { hashPassword } from '@/lib/auth';
 import { z } from 'zod';
 
+export const dynamic = 'force-dynamic';
+
 const CreateUserSchema = z.object({
   email: z.string().email(),
   password: z.string().min(6),

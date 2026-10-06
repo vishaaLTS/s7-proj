@@ -4,6 +4,8 @@ import { authorizeUser, jsonResponse, errorResponse } from '@/lib/rbac';
 import { SkillAliasService } from '@/services/skill-alias';
 import { z } from 'zod';
 
+export const dynamic = 'force-dynamic';
+
 const AddUserSkillSchema = z.object({
   skillName: z.string().min(1),
   proficiencyLevel: z.enum(['BEGINNER', 'ELEMENTARY', 'INTERMEDIATE', 'UPPER_INTERMEDIATE', 'ADVANCED', 'EXPERT']).default('INTERMEDIATE'),

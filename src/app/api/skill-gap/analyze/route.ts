@@ -5,6 +5,8 @@ import { ReadinessService } from '@/services/readiness-service';
 import { SkillGapService } from '@/services/skill-gap';
 import { z } from 'zod';
 
+export const dynamic = 'force-dynamic';
+
 const AnalyzeGapSchema = z.object({
   companyId: z.string().min(1),
   jobRoleId: z.string().min(1),
